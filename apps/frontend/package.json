@@ -1,5 +1,5 @@
 {
-  "name": "@next-nest-template/frontend",
+  "name": "frontend",
   "version": "0.0.0",
   "description": "NextJS frontend for NestJS + Next.js template",
   "author": "Kir-Dev",
