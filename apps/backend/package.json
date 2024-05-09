@@ -1,5 +1,5 @@
 {
-  "name": "@next-nest-template/backend",
+  "name": "backend",
   "version": "0.0.0",
   "description": "NestJS backend for NestJS + Next.js template",
   "author": "Kir-Dev",
@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@nestjs/common": "^10.3.8",
+    "@nestjs/config": "^3.2.2",
     "@nestjs/core": "^10.3.8",
     "@nestjs/mapped-types": "*",
     "@nestjs/platform-express": "^10.3.8",
