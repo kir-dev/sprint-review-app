@@ -1,0 +1,21 @@
+# This is used ONLY for development purposes, don't deploy this in production
+version: '3.8'
+services:
+  db:
+    image: postgres:13.14
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=sprintreview
+    restart: always
+    volumes:
+      - sprintreview_db_folder:/var/lib/postgresql/data
+    networks:
+      - sprintreview_network
+    ports:
+      - '5432:5432'
+networks:
+  sprintreview_network:
+volumes:
+  sprintreview_db_folder:
+    external: true

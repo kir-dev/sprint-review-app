@@ -41,6 +41,18 @@ yarn format
 
 ### Development
 
+#### Backend
+
+Make sure to copy `.env.example` in the backend folder and name the new file `.env`.
+
+After that, we should apply our database schema to the database itself, so run:
+
+```bash
+yarn setup:db:dev
+```
+
+#### Local start
+
 You can run the backend and frontend separately.
 
 ```bash
@@ -79,7 +91,15 @@ yarn format:check
 yarn build:backend
 ```
 
+### If you don't have Postgres installed, but have Docker
+
+Run this command to spin up a container with Postgres. The `.env` file is already modified to have the appropriate connection URL.
+
+```bash
+docker volume create sprintreview_db_folder
+docker-compose up --build -d
+```
+
+Now you can start the dev backend with `yarn start:backend`.
+
 ## Happy Coding!
-
-
-
