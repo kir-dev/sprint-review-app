@@ -27,6 +27,13 @@ const config = {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
+      colors: {
+        'bg-color1': '#',
+        'text-color': '#748D92',
+        'text-color-h1': '#6196A6',
+        'bg-color2': '#2E3944',
+        'page-bg-color': '#212A31',
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],
