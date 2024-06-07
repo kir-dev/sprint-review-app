@@ -1,3 +1,5 @@
+import React from 'react';
+
 export function WorkSelector() {
   return (
     <div className='w-full bg-bg-color2 rounded-lg shadow sm:max-w-md dark:bg-gray-800 dark:border-gray-700 m-auto border text-text-color md:text-m border-gray-700 flex flex-col py-8 mx-auto lg:py-0'>
