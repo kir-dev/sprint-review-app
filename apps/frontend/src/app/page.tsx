@@ -1,9 +1,11 @@
-import { HelloWorld } from '@/components/hello-world';
+import { SprintLogin } from '@/components/SprintLogin';
+import { WorkSelector } from '@/components/WorkSelector';
 
 export default function Home() {
   return (
-    <main className='flex items-center justify-center'>
-      <HelloWorld className='mt-10' />
+    <main className='flex items-center justify-center bg-page-bg-color'>
+      <SprintLogin />
+      <WorkSelector />
     </main>
   );
 }
