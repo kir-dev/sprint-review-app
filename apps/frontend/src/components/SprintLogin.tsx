@@ -1,11 +1,8 @@
-import React from 'react';
-
-import { Footer } from './Footer';
+import { Footer } from './footer';
 
 export function SprintLogin() {
   return (
     <div className='flex flex-col items-center justify-center px-8 py-8 mx-auto md:h-screen lg:py-0'>
-      <a href='#' className='flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-bg-color2' />
       <div className='w-full bg-bg-color2 rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700'>
         <div className='p-6 space-y-4 md:space-y-6 sm:p-8'>
           <h1 className='text-xl font-bold leading-tight tracking-tight text-text-color-h1 md:text-4xl dark:text-bg-color2'>
@@ -84,7 +81,7 @@ export function SprintLogin() {
               </button>
             </div>
             <button className='w-full text-white bg-[#4285F4] focus:ring-[#4285F4]/50 hover:bg-[#4285F4]/90 focus:outline-none focus:ring font-medium rounded-lg text-sm px-5 py-2.5 text-center'>
-              AutSch
+              AutSch (out of service)
             </button>
             <p className='text-sm font-light text-text-color dark:text-gray-400'>
               Nincs még felhasználód?{' '}
@@ -95,7 +92,9 @@ export function SprintLogin() {
           </form>
         </div>
       </div>
-      <Footer />
+      <a href='https://github.com/kir-dev/sprint-review-app' target='_blank' rel='noreferrer'>
+        <Footer />
+      </a>
     </div>
   );
 }

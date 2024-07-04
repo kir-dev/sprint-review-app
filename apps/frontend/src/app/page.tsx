@@ -1,11 +1,9 @@
-import { SprintLogin } from '../components/SprintLogin';
-import { WorkSelector } from '../components/WorkSelector';
+import HomePage from '../components/HomePage';
 
-export default function Home() {
+export default function Page() {
   return (
     <main className='flex items-center justify-center bg-page-bg-color'>
-      <SprintLogin />
-      <WorkSelector />
+      <HomePage />
     </main>
   );
 }
