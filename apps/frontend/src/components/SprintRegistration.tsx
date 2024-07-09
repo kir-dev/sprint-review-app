@@ -44,7 +44,8 @@ export default function RegistrationForm() {
     }
 
     try {
-      const response = await fetch('https://localhost:3001/user', {
+      const response = await fetch('https://localhost:3001', {
+        //https://localhost:3001/user
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
