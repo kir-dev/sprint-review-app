@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 
-import { Footer } from './footer';
+import { Footer } from './Footer';
 
 export default function RegistrationForm() {
   const [formData, setFormData] = useState({
@@ -44,8 +44,7 @@ export default function RegistrationForm() {
     }
 
     try {
-      const response = await fetch('https://localhost:3001', {
-        //https://localhost:3001/user
+      const response = await fetch('http://localhost:3001/user', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

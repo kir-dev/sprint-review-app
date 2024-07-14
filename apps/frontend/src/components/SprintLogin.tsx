@@ -1,4 +1,4 @@
-import { Footer } from './footer';
+import { Footer } from './Footer';
 
 export function SprintLogin() {
   return (
@@ -85,7 +85,7 @@ export function SprintLogin() {
             </button>
             <p className='text-sm font-light text-text-color dark:text-gray-400'>
               Nincs még felhasználód?{' '}
-              <a href='#SprintRegistration.tsx' className='text-text-color font-medium text hover:underline dark:text'>
+              <a href='/registration' className='text-text-color font-medium text hover:underline dark:text'>
                 Regisztráció
               </a>
             </p>
