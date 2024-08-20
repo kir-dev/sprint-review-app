@@ -1,9 +1,9 @@
-import { WorkSelector } from '../../components/WorkSelector';
+import { ReportingPeriod } from '../../components/ReportingPeriod';
 
 export default function Home() {
   return (
     <main className='flex items-center justify-center bg-page-bg-color'>
-      <WorkSelector />
+      <ReportingPeriod />
     </main>
   );
 }

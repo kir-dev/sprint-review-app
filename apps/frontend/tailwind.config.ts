@@ -28,7 +28,7 @@ const config = {
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
       colors: {
-        'bg-color1': '#',
+        'bg-color1': '#2E4444',
         'text-color': '#748D92',
         'text-color-h1': '#6196A6',
         'bg-color2': '#2E3944',

@@ -1,49 +1,65 @@
-import Navbar from './Navbar';
+import { Footer } from './Footer';
 
 export default function GreetingsPage() {
   return (
-    <div>
-      <Navbar />
-      <div className='flex flex-col items-start justify-start h-screen px-8 py-8 mx-auto lg:py-0'>
-        <h1 className='w-full text-center text-xl px-20 font-bold leading-tight tracking-tight text-text-color-h1 md:text-4xl dark:text-bg-color2'>
+    <div className='flex flex-col min-h-screen'>
+      <div className='flex justify-center py-8'>
+        <h1 className='text-xl font-bold leading-tight tracking-tight text-text-color-h1 md:text-4xl dark:text-bg-color2'>
           Kir-Dev Sprint Review
         </h1>
-        <p>
-          {/*Ide szeretnék valami szöveget, hogy mit hol talál meg a felhasználó az oldalon. Pl a munkák alatt lesz a  */}
+      </div>
+      <div className='max-w-4xl text-center py-4 px-6 text-text-color'>
+        <p className='text-lg'>
+          A félév végi közösségi pontozás az itt leadott munkák alapján fog történni. Azonban ennek nem az az egyetlen
+          célja, hogy a szorgos tagok biztos bejussanak a koliba, hanem az is, hogy a Ház vezetése lássa, mennyi munkát
+          végzett a Kir-Dev a félév során. Ezért szeretném kérni, hogy{' '}
+          <b>azok is töltsék ki ezt a formot minél pontosabban, akiknek nincs szüksége közösségi pontra!</b>
         </p>
-        <div className='py-5'>
-          {/*                       NEM IDE VALÓ, HANEM A WORKSELECTORRA
-          <h2 className='w-full text-center text-2xl font-bold leading-tight tracking-tight text-text-color-h1'>
-            Beszámolási időszak
-          </h2>
-          <div className='flex flex-col items-center justify-center py-3'>
-            <select className='bg-bg-color2 border-text-color border rounded-lg text-left px-5 py-2 w-full text-text-color hover:bg-[#2c3540] focus:ring-4 text-xl outline outline-bg-colro2 outline-offset-0'>
-              <option>Option 1</option>
-              <option>Option 2</option>
-              <option>Option 3</option>
-            </select>
-          </div>
-          */}
-          <h2 className='w-full text-left text-2xl font-bold leading-tight tracking-tight text-text-color-h1 py-3'>
-            Projektek
-          </h2>
-          <div className='flex flex-col items-center justify-center'>
-            {/*
-            <select className='bg-bg-color2 border-text-color border rounded-lg text-left px-5 py-2 w-full text-text-color hover:bg-[#2c3540] focus:ring-4 text-xl outline outline-bg-colro2 outline-offset-0'>
-              <option>Option 1</option>
-              <option>Option 2</option>
-              <option>Option 3</option>
-            </select>
-            */}
-            <nav>
-              <div>
-                <ol>Option 1</ol>
-                <ol>Option 2</ol>
-                <ol>Option 3</ol>
-              </div>
-            </nav>
-          </div>
+      </div>
+      <div className='flex flex-col items-center justify-center flex-grow '>
+        <div className='flex flex-row gap-x-4 items-center justify-center'>
+          <a
+            href='/reportingperiod'
+            className='block w-64 h-96 max-w-sm py-6 px-6 bg-bg-color2 border border-black rounded-lg shadow hover:bg-bg-color1 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700'
+          >
+            <h5 className='mb-2 text-2xl font-bold tracking-tight text-text-color dark:text-white'>
+              Beszámolási időszakok
+            </h5>
+            <p className='font-normal text-text-color dark:text-gray-400'>
+              Válaszd ki, melyik időszakról számolnál be! Amennyiben korábbi időszakból is szeretnél beszámolni
+              munkáról, nem szükséges többször is kitölteni a formot. Nem baj, ha az itt kiválasztott időszak előttről
+              is felsorolsz munkákat, lényeg csak hogy minden munka egyszer szerepeljen.
+            </p>
+          </a>
+          <a
+            href='/currentjobs'
+            className='block w-64 h-96 max-w-sm p-6 bg-bg-color2 border border-black rounded-lg shadow hover:bg-bg-color1 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700'
+          >
+            <h5 className='mb-2 text-2xl font-bold tracking-tight text-text-color dark:text-white'>Munkák</h5>
+            <p className='font-normal text-text-color dark:text-gray-400'>Láthatod a jelenleg zajló</p>
+            <ul className='font-normal text-text-color dark:text-gray-400'>
+              <li>Felelős pozíciókhoz tartozó munkákat</li>
+              <li>Projektmunkákat</li>
+              <li>Tanfolyamokat, mentorálási alkalmakat vagy workshopokat</li>
+              <li>Üzemeltetéseket</li>
+              <li>Operatív munkákat</li>
+              <li>Simonyihoz tartozó munkákat</li>
+              <li>Egyéb munkákat</li>
+            </ul>
+          </a>
+          <a
+            href='#'
+            className='block w-64 h-96 max-w-sm p-6 bg-bg-color2 border border-black rounded-lg shadow hover:bg-bg-color1 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700'
+          >
+            <h5 className='mb-2 text-2xl font-bold tracking-tight text-text-color dark:text-white'>Profil</h5>
+            <p className='font-normal text-text-color dark:text-gray-400'>
+              Itt láthatod a korábbi beszámolóidat, és a profilodat is itt tudod szerkeszteni.
+            </p>
+          </a>
         </div>
+        <a href='https://github.com/kir-dev/sprint-review-app' target='_blank' rel='noreferrer'>
+          <Footer />
+        </a>
       </div>
     </div>
   );

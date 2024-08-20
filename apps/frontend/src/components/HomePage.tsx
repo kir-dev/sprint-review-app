@@ -2,7 +2,7 @@ import { Footer } from './Footer';
 
 export default function HomePage() {
   return (
-    <div className='flex flex-col items-center justify-center px-8 py-8 mx-auto md:h-screen lg:py-0 bg-bg-color1 text-text-color text-center'>
+    <div className='flex flex-col items-center justify-center px-8 py-8 mx-auto md:h-screen lg:py-0 text-text-color text-center'>
       <div>
         <h1 className='text-center w-full text-xl font-bold leading-tight tracking-tight text-text-color-h1 md:text-4xl dark:text-bg-color2'>
           Welcome to SprintReview
