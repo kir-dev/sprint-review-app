@@ -26,12 +26,12 @@ export class AuthService {
     const hashPass = await bcrypt.hash(payload.password, this.saltOrRounds);
 
     const user = {
-      sureName: payload.surName,
+      surName: payload.surName,
       foreName: payload.foreName,
       password: hashPass,
       email: payload.email,
     };
 
-    this.usersService.create(user);
+    await this.usersService.create(user);
   }
 }
