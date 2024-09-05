@@ -11,15 +11,18 @@ export class AuthService {
 
   async signIn(email, pass) {
     const user = await this.usersService.findOneByEMail(email);
-    if (user?.password !== pass) {
-      const isMatch = await bcrypt.compare(pass, user?.password);
 
-      if (!isMatch) {
-        throw new UnauthorizedException();
-      }
-
-      return user;
+    if (!user) {
+      throw new UnauthorizedException();
     }
+
+    const isMatch = await bcrypt.compare(pass, user?.password);
+
+    if (!isMatch) {
+      throw new UnauthorizedException();
+    }
+
+    return user;
   }
 
   async signUp(payload: CreateUserDto) {
