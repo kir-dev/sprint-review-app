@@ -26,9 +26,8 @@ export default function GreetingsPage() {
               Beszámolási időszakok
             </h5>
             <p className='font-normal text-text-color dark:text-gray-400'>
-              Válaszd ki, melyik időszakról számolnál be! Amennyiben korábbi időszakból is szeretnél beszámolni
-              munkáról, nem szükséges többször is kitölteni a formot. Nem baj, ha az itt kiválasztott időszak előttről
-              is felsorolsz munkákat, lényeg csak hogy minden munka egyszer szerepeljen.
+              Válaszd ki, melyik időszakról számolnál be! Nem baj, ha az itt kiválasztott időszak előttről is felsorolsz
+              munkákat, lényeg csak hogy minden munka egyszer szerepeljen.
             </p>
           </a>
           <a

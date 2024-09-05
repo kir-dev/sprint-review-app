@@ -1,4 +1,4 @@
-import { SprintLogin } from '../../components/SprintLogin';
+import SprintLogin from '../../components/SprintLogin';
 
 export default function Home() {
   return (

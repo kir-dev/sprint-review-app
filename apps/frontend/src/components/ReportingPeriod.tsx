@@ -20,35 +20,27 @@ export function ReportingPeriod() {
             </thead>
             <tbody>
               <tr className='border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-bg-color1 dark:border-white/10 dark:hover:bg-neutral-600'>
-                <a href='#'>
-                  <td className='float-left whitespace-nowrap px-6 py-4 font-medium tracking-wider'>
-                    2021.01.01 - 2021.01.15
-                  </td>
-                </a>
+                <td className='float-left whitespace-nowrap px-6 py-4 font-medium tracking-wider'>
+                  <a href='#'>2021.01.01 - 2021.01.15</a>
+                </td>
                 <td className='float-right whitespace-nowrap px-6 py-4 font-medium'>Pipa vagy x</td>
               </tr>
               <tr className='border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-bg-color1 dark:border-white/10 dark:hover:bg-neutral-600'>
-                <a href='#'>
-                  <td className='float-left whitespace-nowrap px-6 py-4 font-medium tracking-wider'>
-                    2021.01.16 - 2021.02.01.
-                  </td>
-                </a>
+                <td className='float-left whitespace-nowrap px-6 py-4 font-medium tracking-wider'>
+                  <a href='#'>2021.01.16 - 2021.02.01.</a>
+                </td>
                 <td className='float-right whitespace-nowrap px-6 py-4 font-medium'>Pipa vagy x</td>
               </tr>
               <tr className='border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-bg-color1 dark:border-white/10 dark:hover:bg-neutral-600'>
-                <a href='#'>
-                  <td className='float-left whitespace-nowrap px-6 py-4 font-medium tracking-wider'>
-                    2021.02.02. - 2021.02.15.
-                  </td>
-                </a>
+                <td className='float-left whitespace-nowrap px-6 py-4 font-medium tracking-wider'>
+                  <a href='#'>2021.02.02. - 2021.02.15.</a>
+                </td>
                 <td className='float-right whitespace-nowrap px-6 py-4 font-medium'>Pipa vagy x</td>
               </tr>
               <tr className='border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-bg-color1 dark:border-white/10 dark:hover:bg-neutral-600'>
-                <a href='#'>
-                  <td className='float-left whitespace-nowrap px-6 py-4 font-medium tracking-wider'>
-                    2021.02.15. - 2021.03.01.
-                  </td>
-                </a>
+                <td className='float-left whitespace-nowrap px-6 py-4 font-medium tracking-wider'>
+                  <a href='#'>2021.02.15. - 2021.03.01.</a>
+                </td>
                 <td className='float-right whitespace-nowrap px-6 py-4 font-medium'>Pipa vagy x</td>
               </tr>
             </tbody>

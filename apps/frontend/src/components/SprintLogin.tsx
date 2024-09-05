@@ -1,6 +1,52 @@
+'use client';
+
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import { Footer } from './Footer';
 
-export function SprintLogin() {
+export default function SprintLogin() {
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  async function IsUserRegistrated(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const emailElement = document.getElementById('email') as HTMLInputElement;
+    const passwordElement = document.getElementById('password') as HTMLInputElement;
+
+    if (emailElement && passwordElement && emailElement.value && passwordElement.value) {
+      const email = emailElement.value;
+      const password = passwordElement.value;
+
+      try {
+        const response = await fetch('http://localhost:3001/user', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email, password }),
+        });
+
+        if (!response.ok) {
+          throw new Error(`Login failed, error code: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        if (data.isRegistered) {
+          const navigate = useNavigate();
+          navigate('/afterlogin');
+          console.log('User is registered');
+        } else {
+          setErrorMessage('User is not registered');
+        }
+      } catch (error) {
+        setErrorMessage((error as any).message); //valami hibakezelés kell ide
+      }
+    } else {
+      setErrorMessage('Email and password are required');
+    }
+  }
+
   return (
     <div className='flex flex-col items-center justify-center px-8 py-8 mx-auto md:h-screen lg:py-0'>
       <div className='w-full bg-bg-color2 rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700'>
@@ -8,7 +54,8 @@ export function SprintLogin() {
           <h1 className='text-xl font-bold leading-tight tracking-tight text-text-color-h1 md:text-4xl dark:text-bg-color2'>
             Sprint Review bejelentkezés
           </h1>
-          <form className='space-y-4 md:space-y-6' action='#'>
+          {errorMessage && <p className='text-red-500'>{errorMessage}</p>}
+          <form className='space-y-4 md:space-y-6' onClick={IsUserRegistrated}>
             <div>
               <label className='block mb-2 text-sm font-medium text-text-color dark:text-bg-color2'>Email cím</label>
               <input
