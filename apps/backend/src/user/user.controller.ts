@@ -1,4 +1,5 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
+import { User } from '@prisma/client';
 import { AuthService } from 'src/auth/auth.service';
 
 import { CreateUserDto } from './dto/create-user.dto';
@@ -17,6 +18,11 @@ export class UserController {
     return this.userService.create(createUserDto);
   }
 
+  @Post('login')
+  async logIn(@Body() loginDto: { email: string; passWord: string }): Promise<User> {
+    return await this.authService.signIn(loginDto.email, loginDto.passWord);
+  }
+
   @Get()
   findAll() {
     return this.userService.findAll();
@@ -25,11 +31,6 @@ export class UserController {
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.userService.findOne(Number(id));
-  }
-
-  @Get(':email/:passWord')
-  async logIn(@Param('email') email: string, @Param('passWord') passWord: string): Promise<any> {
-    return await this.authService.signIn(email, passWord);
   }
 
   @Patch(':id')
