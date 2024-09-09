@@ -1,15 +1,61 @@
-import { Footer } from './footer';
+'use client';
 
-export function SprintLogin() {
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import { Footer } from './Footer';
+
+export default function SprintLogin() {
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  async function IsUserRegistrated(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const emailElement = document.getElementById('email') as HTMLInputElement;
+    const passwordElement = document.getElementById('password') as HTMLInputElement;
+
+    if (emailElement && passwordElement && emailElement.value && passwordElement.value) {
+      const email = emailElement.value;
+      const password = passwordElement.value;
+
+      try {
+        const response = await fetch('http://localhost:3001/user/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email, password }),
+        });
+
+        if (!response.ok) {
+          throw new Error(`Login failed, error code: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        if (data.isRegistered) {
+          const navigate = useNavigate();
+          navigate('/afterlogin');
+          console.log('User is registered');
+        } else {
+          setErrorMessage('User is not registered');
+        }
+      } catch (error) {
+        setErrorMessage((error as any).message); //valami hibakezelés kell ide
+      }
+    } else {
+      setErrorMessage('Email and password are required');
+    }
+  }
+
   return (
     <div className='flex flex-col items-center justify-center px-8 py-8 mx-auto md:h-screen lg:py-0'>
-      <a href='#' className='flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-bg-color2' />
       <div className='w-full bg-bg-color2 rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700'>
         <div className='p-6 space-y-4 md:space-y-6 sm:p-8'>
           <h1 className='text-xl font-bold leading-tight tracking-tight text-text-color-h1 md:text-4xl dark:text-bg-color2'>
             Sprint Review bejelentkezés
           </h1>
-          <form className='space-y-4 md:space-y-6' action='#'>
+          {errorMessage && <p className='text-red-500'>{errorMessage}</p>}
+          <form className='space-y-4 md:space-y-6' onClick={IsUserRegistrated}>
             <div>
               <label className='block mb-2 text-sm font-medium text-text-color dark:text-bg-color2'>Email cím</label>
               <input
@@ -82,18 +128,20 @@ export function SprintLogin() {
               </button>
             </div>
             <button className='w-full text-white bg-[#4285F4] focus:ring-[#4285F4]/50 hover:bg-[#4285F4]/90 focus:outline-none focus:ring font-medium rounded-lg text-sm px-5 py-2.5 text-center'>
-              AutSch
+              AutSch (out of service)
             </button>
             <p className='text-sm font-light text-text-color dark:text-gray-400'>
               Nincs még felhasználód?{' '}
-              <a href='#' className='text-text-color font-medium text hover:underline dark:text'>
+              <a href='/registration' className='text-text-color font-medium text hover:underline dark:text'>
                 Regisztráció
               </a>
             </p>
           </form>
         </div>
       </div>
-      <Footer />
+      <a href='https://github.com/kir-dev/sprint-review-app' target='_blank' rel='noreferrer'>
+        <Footer />
+      </a>
     </div>
   );
 }
