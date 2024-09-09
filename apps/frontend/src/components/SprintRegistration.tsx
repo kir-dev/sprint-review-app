@@ -5,8 +5,8 @@ import { Footer } from './Footer';
 
 export default function RegistrationForm() {
   const [formData, setFormData] = useState({
-    lastname: '',
-    firstname: '',
+    surName: '',
+    foreName: '',
     email: '',
     password: '',
     confirmPassword: '',
@@ -25,13 +25,7 @@ export default function RegistrationForm() {
     setIsSubmitting(true);
     setErrorMessage(null);
 
-    if (
-      !formData.lastname ||
-      !formData.firstname ||
-      !formData.email ||
-      !formData.password ||
-      !formData.confirmPassword
-    ) {
+    if (!formData.surName || !formData.foreName || !formData.email || !formData.password || !formData.confirmPassword) {
       setErrorMessage('Kérlek töltsd ki az összes mezőt.');
       setIsSubmitting(false);
       return;
@@ -54,8 +48,8 @@ export default function RegistrationForm() {
         throw new Error(`A regisztráció nem sikerült. hibakód: ${response.status}`);
       }
 
-      const data = await response.json();
-      console.log('Registration successful:', data);
+      //const data = await response.json();
+      //console.log('Registration successful:', data);
     } catch (error) {
       setErrorMessage((error as any).message);
     } finally {
@@ -76,9 +70,9 @@ export default function RegistrationForm() {
               <label className='block mb-2 text-sm font-medium text-text-color dark:text-bg-color2'>Vezeték név</label>
               <input
                 type='text'
-                name='lastname'
+                name='surName'
                 id='lastname'
-                value={formData.lastname}
+                value={formData.surName}
                 onChange={handleChange}
                 className='bg-bg-color2 border border-gray-300 text-white sm:text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-bg-color2 dark:focus:ring-blue-500 dark:focus:border-blue-500'
               />
@@ -87,9 +81,9 @@ export default function RegistrationForm() {
               <label className='block mb-2 text-sm font-medium text-text-color dark:text-bg-color2'>Kereszt név</label>
               <input
                 type='text'
-                name='firstname'
+                name='foreName'
                 id='firstname'
-                value={formData.firstname}
+                value={formData.foreName}
                 onChange={handleChange}
                 className='bg-bg-color2 border border-gray-300 text-white sm:text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-bg-color2 dark:focus:ring-blue-500 dark:focus:border-blue-500'
               />

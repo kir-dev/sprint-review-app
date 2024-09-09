@@ -18,7 +18,7 @@ export default function SprintLogin() {
       const password = passwordElement.value;
 
       try {
-        const response = await fetch('http://localhost:3001/user', {
+        const response = await fetch('http://localhost:3001/user/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
 import { User } from '@prisma/client';
-import { AuthService } from 'src/auth/auth.service';
+import { AuthService } from 'src/user/auth.service';
 
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
@@ -15,12 +15,16 @@ export class UserController {
 
   @Post()
   create(@Body() createUserDto: CreateUserDto) {
-    return this.userService.create(createUserDto);
+    return this.authService.signUp(createUserDto);
   }
 
   @Post('login')
-  async logIn(@Body() loginDto: { email: string; passWord: string }): Promise<User> {
-    return await this.authService.signIn(loginDto.email, loginDto.passWord);
+  async logIn(@Body() loginDto: { email: string; password: string }): Promise<User & { isRegistered: boolean }> {
+    const user = await this.authService.signIn(loginDto.email, loginDto.password);
+    return {
+      ...user,
+      isRegistered: user ? true : false,
+    };
   }
 
   @Get()

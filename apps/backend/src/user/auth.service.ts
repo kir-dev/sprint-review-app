@@ -35,6 +35,11 @@ export class AuthService {
       email: payload.email,
     };
 
-    await this.usersService.create(user);
+    await this.usersService.create({
+      email: user.email,
+      password: user.password,
+      firstname: user.foreName,
+      lastname: user.surName,
+    });
   }
 }
