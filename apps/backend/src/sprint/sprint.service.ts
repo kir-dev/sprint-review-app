@@ -1,11 +1,8 @@
 import { Injectable } from '@nestjs/common';
 
-import { CreateSprintDto } from './dto/create-sprint.dto';
-import { UpdateSprintDto } from './dto/update-sprint.dto';
-
 @Injectable()
 export class SprintService {
-  create(createSprintDto: CreateSprintDto) {
+  create() {
     return 'This action adds a new sprint';
   }
 
@@ -17,7 +14,7 @@ export class SprintService {
     return `This action returns a #${id} sprint`;
   }
 
-  update(id: number, updateSprintDto: UpdateSprintDto) {
+  update(id: number) {
     return `This action updates a #${id} sprint`;
   }
 
