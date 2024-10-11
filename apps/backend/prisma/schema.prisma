@@ -53,9 +53,9 @@ model Tasks {
   description String
   sprintId    Int
   sprint      Sprint   @relation(fields: [sprintId], references: [id])
-  userId      Int
-  user        User     @relation(fields: [userId], references: [id])
-  projektId   Int
-  projekt     Projekt  @relation(fields: [projektId], references: [id])
+  userId      Int?
+  user        User?    @relation(fields: [userId], references: [id])
+  projektId   Int?
+  projekt     Projekt? @relation(fields: [projektId], references: [id])
   createdAt   DateTime @default(now())
 }
