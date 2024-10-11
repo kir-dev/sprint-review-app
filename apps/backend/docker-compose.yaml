@@ -1,0 +1,32 @@
+name: sprint-review
+
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - '${BACKEND_PORT}:${BACKEND_PORT}'
+    env_file:
+      - .env
+    restart: always
+    networks:
+      - sprint-review-network
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13.10
+    env_file:
+      - .env
+    restart: always
+    volumes:
+      - sprint-review_db_folder:/var/lib/postgresql/data
+    networks:
+      - sprint-review-network
+
+volumes:
+  sprint-review_db_folder:
+    external: true
+
+networks:
+  sprint-review-network:

@@ -1,5 +1,6 @@
 import { Footer } from '../../components/Footer';
 import Navbar from '../../components/Navbar';
+import Section from '../../components/section';
 
 export default function Layout({
   children,
@@ -9,7 +10,7 @@ export default function Layout({
   return (
     <div className='flex flex-col min-h-screen'>
       <Navbar />
-      {children}
+      <Section>{children}</Section>
       <Footer />
     </div>
   );
