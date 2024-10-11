@@ -45,13 +45,11 @@ export default function GreetingsPage() {
             </ul>
           </a>
           <a
-            href='#'
+            href='/newproject'
             className='block w-64 h-96 max-w-sm p-6 bg-bg-color2 border border-black rounded-lg shadow hover:bg-bg-color1 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700'
           >
-            <h5 className='mb-2 text-2xl font-bold tracking-tight text-text-color dark:text-white'>Profil</h5>
-            <p className='font-normal text-text-color dark:text-gray-400'>
-              Itt láthatod a korábbi beszámolóidat, és a profilodat is itt tudod szerkeszteni.
-            </p>
+            <h5 className='mb-2 text-2xl font-bold tracking-tight text-text-color dark:text-white'>Új Projekt</h5>
+            <p className='font-normal text-text-color dark:text-gray-400'>Itt tudsz új projeket nyitni.</p>
           </a>
         </div>
         <a href='https://github.com/kir-dev/sprint-review-app' target='_blank' rel='noreferrer' />
