@@ -15,7 +15,7 @@ export class UserService {
     return await this.prisma.user.findMany();
   }
 
-  findOne(id: number): Promise<User> {
+  findOne(id: string): Promise<User> {
     return this.prisma.user.findUnique({ where: { id } });
   }
 
@@ -23,11 +23,11 @@ export class UserService {
     return this.prisma.user.findUnique({ where: { email } });
   }
 
-  async update(id: number, data: Prisma.UserUpdateInput) {
+  async update(id: string, data: Prisma.UserUpdateInput) {
     return await this.prisma.user.update({ where: { id }, data });
   }
 
-  async remove(id: number) {
+  async remove(id: string) {
     return await this.prisma.user.delete({ where: { id } });
   }
 }
