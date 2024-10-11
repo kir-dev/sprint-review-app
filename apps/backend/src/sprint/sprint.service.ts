@@ -1,27 +1,52 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
+import { PrismaService } from 'nestjs-prisma';
 
 import { CreateSprintDto } from './dto/create-sprint.dto';
 import { UpdateSprintDto } from './dto/update-sprint.dto';
+import { Sprint } from './entities/sprint.entity';
 
 @Injectable()
 export class SprintService {
-  create(createSprintDto: CreateSprintDto) {
-    return 'This action adds a new sprint';
+  constructor(private readonly prisma: PrismaService) {}
+
+  async create(createSprintDto: CreateSprintDto): Promise<Sprint> {
+    try {
+      const newSprint = await this.prisma.sprint.create({ data: createSprintDto });
+      return newSprint;
+    } catch (error) {
+      throw new Error(`Sprint not created ${error.message}`);
+    }
   }
 
-  findAll() {
-    return `This action returns all sprint`;
+  async findAll(): Promise<Sprint[]> {
+    try {
+      return this.prisma.sprint.findMany();
+    } catch (error) {
+      throw new NotFoundException(`Sprints not found ${error.message}`);
+    }
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} sprint`;
+  async findOne(id: number): Promise<Sprint> {
+    const sprint = await this.prisma.sprint.findUnique({ where: { id } });
+    if (!sprint) {
+      throw new NotFoundException(`Sprint with ID ${id} not found`);
+    }
+    return sprint;
   }
 
-  update(id: number, updateSprintDto: UpdateSprintDto) {
-    return `This action updates a #${id} sprint`;
+  async update(id: number, updateSprintDto: UpdateSprintDto): Promise<Sprint> {
+    try {
+      return await this.prisma.sprint.update({ where: { id }, data: updateSprintDto });
+    } catch (error) {
+      throw new NotFoundException(`Sprint with ID ${id} not found ${error.message}`);
+    }
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} sprint`;
+  async remove(id: number): Promise<Sprint> {
+    try {
+      return await this.prisma.sprint.delete({ where: { id } });
+    } catch (error) {
+      throw new NotFoundException(`Sprint with ID ${id} not found ${error.message}`);
+    }
   }
 }

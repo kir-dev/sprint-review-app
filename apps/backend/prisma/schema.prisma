@@ -19,7 +19,7 @@ model User {
   firstname String
   email     String    @unique
   role      Role      @default(USER)
-  Projekt   Project[]
+  Project   Project[]
   Tasks     Tasks[]
 }
 
