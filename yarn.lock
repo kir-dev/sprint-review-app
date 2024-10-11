@@ -489,11 +489,6 @@
   resolved "https://registry.npmjs.org/@prisma/client/-/client-5.16.1.tgz"
   integrity sha512-wM9SKQjF0qLxdnOZIVAIMKiz6Hu7vDt4FFAih85K1dk/Rr2mdahy6d3QP41K62N9O0DJJA//gUDA3Mp49xsKIg==
 
-"@prisma/client@^5.20.0":
-  version "5.20.0"
-  resolved "https://registry.yarnpkg.com/@prisma/client/-/client-5.20.0.tgz#4fc9f2b2341c9c997c139df4445688dd6b39663b"
-  integrity sha512-CLv55ZuMuUawMsxoqxGtLT3bEZoa2W8L3Qnp6rDIFWy+ZBrUcOFKdoeGPSnbBqxc3SkdxJrF+D1veN/WNynZYA==
-
 "@prisma/debug@5.16.1":
   version "5.16.1"
   resolved "https://registry.npmjs.org/@prisma/debug/-/debug-5.16.1.tgz"
@@ -1264,11 +1259,6 @@ ansi-styles@^4.0.0, ansi-styles@^4.1.0:
   dependencies:
     color-convert "^2.0.1"
 
-ansi-styles@^6.1.0:
-  version "6.2.1"
-  resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-6.2.1.tgz#0e62320cf99c21afff3b3012192546aacbfb05c5"
-  integrity sha512-bN798gFfQX+viw3R7yrGWRqnrN2oRkEkUjjl4JNn4E8GxxbjtG3FbrEIIY3l8/hrwUwIeCZvi4QuOTP4MErVug==
-
 any-promise@^1.0.0:
   version "1.3.0"
   resolved "https://registry.npmjs.org/any-promise/-/any-promise-1.3.0.tgz"
@@ -1501,7 +1491,7 @@ axobject-query@^3.2.1:
     "@nestjs/platform-express" "^10.3.8"
     "@nestjs/swagger" "^7.4.2"
     "@prisma/client" "^5.13.0"
-    backend "file:../../../../AppData/Local/Yarn/Cache/v6/npm-backend-0.0.0-ac0052a7-5985-4d36-9fc7-686a319fc1dc-1728681736380/node_modules/backend"
+    backend "file:../../AppData/Local/Yarn/Cache/v6/npm-backend-0.0.0-372598d3-bf52-4e4e-8e75-ed13c5dd4df7-1728686071803/node_modules/backend"
     class-transformer "^0.5.1"
     class-validator "^0.14.1"
     nestjs-prisma "^0.23.0"
@@ -2163,11 +2153,6 @@ dotenv@16.4.5:
   version "16.4.5"
   resolved "https://registry.npmjs.org/dotenv/-/dotenv-16.4.5.tgz"
   integrity sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==
-
-eastasianwidth@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/eastasianwidth/-/eastasianwidth-0.2.0.tgz#696ce2ec0aa0e6ea93a397ffcf24aa7840c827cb"
-  integrity sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==
 
 ecdsa-sig-formatter@1.0.11:
   version "1.0.11"
@@ -2919,7 +2904,7 @@ fresh@0.5.2:
     axios "^1.7.7"
     class-variance-authority "^0.7.0"
     clsx "^2.1.0"
-    frontend "file:../../../../AppData/Local/Yarn/Cache/v6/npm-frontend-0.0.0-ce6b1947-96ab-4fef-ac7f-cfa0704af895-1728681736387/node_modules/frontend"
+    frontend "file:../../AppData/Local/Yarn/Cache/v6/npm-frontend-0.0.0-846c91d7-5788-417f-a050-a57fa59a778a-1728686071807/node_modules/frontend"
     lucide-react "^0.372.0"
     next "14.2.2"
     react "^18.2.0"
@@ -4148,7 +4133,7 @@ nestjs-prisma@^0.23.0:
     "@kir-dev/passport-authsch" "^2.1.0"
     axios "^1.7.2"
     bcrypt "^5.1.1"
-    next-nest-template "file:../../../../AppData/Local/Yarn/Cache/v6/npm-next-nest-template-0.0.0-2053e885-8d11-48e8-a27f-969e2563da43-1728681736386/node_modules/next-nest-template"
+    next-nest-template "file:../../AppData/Local/Yarn/Cache/v6/npm-next-nest-template-0.0.0-6fe80d1b-833f-4db3-881a-03e0e8a4dc22-1728686071651/node_modules/next-nest-template"
     react-router-dom "^6.23.1"
 
 next@14.2.2:
@@ -5248,7 +5233,7 @@ streamsearch@^1.1.0:
     is-fullwidth-code-point "^3.0.0"
     strip-ansi "^6.0.1"
 
-"string-width@^1.0.2 || 2 || 3 || 4", string-width@^4.1.0:
+string-width@4.1.0, "string-width@^1.0.2 || 2 || 3 || 4", string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.3, string-width@^5.1.2:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.1.0.tgz#ba846d1daa97c3c596155308063e075ed1c99aff"
   integrity sha512-NrX+1dVVh+6Y9dnQ19pR0pP4FiEIlUvdTGn8pw6CKTNq5sgib2nIhmUNT5TAmhWmvKr3WcxBcP3E8nWezuipuQ==
@@ -5256,24 +5241,6 @@ streamsearch@^1.1.0:
     emoji-regex "^8.0.0"
     is-fullwidth-code-point "^3.0.0"
     strip-ansi "^5.2.0"
-
-string-width@^4.2.0, string-width@^4.2.3:
-  version "4.2.3"
-  resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
-  integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
-  dependencies:
-    emoji-regex "^8.0.0"
-    is-fullwidth-code-point "^3.0.0"
-    strip-ansi "^6.0.1"
-
-string-width@^5.0.1, string-width@^5.1.2:
-  version "5.1.2"
-  resolved "https://registry.yarnpkg.com/string-width/-/string-width-5.1.2.tgz#14f8daec6d81e7221d2a357e668cab73bdbca794"
-  integrity sha512-HnLOCR3vjcY8beoNLtcjZ5/nxn2afmME6lhrDrebokqMap+XbeW8n9TXpPDOqdGK5qcI3oT0GKTW6wC7EMiVqA==
-  dependencies:
-    eastasianwidth "^0.2.0"
-    emoji-regex "^9.2.2"
-    strip-ansi "^7.0.1"
 
 string.prototype.matchall@^4.0.10:
   version "4.0.11"
@@ -5335,7 +5302,7 @@ string_decoder@~1.1.1:
   dependencies:
     safe-buffer "~5.1.0"
 
-"strip-ansi-cjs@npm:strip-ansi@^6.0.1", strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+"strip-ansi-cjs@npm:strip-ansi@^6.0.1":
   version "6.0.1"
   resolved "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz"
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
@@ -5348,6 +5315,13 @@ strip-ansi@^5.2.0:
   integrity sha512-DuRs1gKbBqsMKIZlrffwlug8MHkcnpjs5VPmL1PAh+mA30U0DTotfDZ0d2UUsXpPmPmMMJ6W773MaA3J+lbiWA==
   dependencies:
     ansi-regex "^4.1.0"
+
+strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz"
+  integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
+  dependencies:
+    ansi-regex "^5.0.1"
 
 strip-ansi@^7.0.1:
   version "7.1.0"
@@ -5981,23 +5955,14 @@ wide-align@^1.1.2:
     string-width "^4.1.0"
     strip-ansi "^6.0.0"
 
-wrap-ansi@^6.0.1, wrap-ansi@^6.2.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-6.2.0.tgz#e9393ba07102e6c91a3b221478f0257cd2856e53"
-  integrity sha512-r6lPcBGxZXlIcymEu7InxDMhdW0KDxpLgoFLcguasxCaJ/SOIZwINatK9KY/tf+ZrlywOKU0UDj3ATXUBfxJXA==
+wrap-ansi@7.0.0, wrap-ansi@^6.0.1, wrap-ansi@^6.2.0, wrap-ansi@^8.1.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
+  integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==
   dependencies:
     ansi-styles "^4.0.0"
     string-width "^4.1.0"
     strip-ansi "^6.0.0"
-
-wrap-ansi@^8.1.0:
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-8.1.0.tgz#56dc22368ee570face1b49819975d9b9a5ead214"
-  integrity sha512-si7QWI6zUMq56bESFvagtmzMdGOtoxfR+Sez11Mobfc7tm+VkUckk9bW2UeffTGVUbOksxmSw0AA2gs8g71NCQ==
-  dependencies:
-    ansi-styles "^6.1.0"
-    string-width "^5.0.1"
-    strip-ansi "^7.0.1"
 
 wrappy@1:
   version "1.0.2"

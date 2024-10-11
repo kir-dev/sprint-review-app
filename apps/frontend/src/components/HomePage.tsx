@@ -5,15 +5,10 @@ export default function HomePage() {
         <h1 className='text-center w-full text-xl font-bold leading-tight tracking-tight text-text-color-h1 md:text-4xl dark:text-bg-color2'>
           Welcome to SprintReview
         </h1>
-        <p>Valami leírás az oldalról. (Miért készült, kiknek stb...)</p>
       </div>
       <div>
         {/* prettier-ignore */}
         <p className='flex items-center mb-6 text-2xl font-semibold dark:text-bg-color2 whitespace-nowrap text-center'>
-            <a className='text-gray-500 dark:text-bg-color2 underline' href='/registration'>
-              Sign up
-            </a>
-            &nbsp;or&nbsp;
             <a className='text-gray-500 dark:text-bg-color2 underline' href='/login'>
               log in
             </a>
