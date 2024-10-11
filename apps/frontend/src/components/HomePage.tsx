@@ -1,5 +1,3 @@
-import { Footer } from './Footer';
-
 export default function HomePage() {
   return (
     <div className='flex flex-col items-center justify-center px-8 py-8 mx-auto md:h-screen lg:py-0 text-text-color text-center'>
@@ -22,9 +20,7 @@ export default function HomePage() {
             &nbsp;to get started
           </p>
       </div>
-      <a href='https://github.com/kir-dev/sprint-review-app' target='_blank' rel='noreferrer'>
-        <Footer />
-      </a>
+      <a href='https://github.com/kir-dev/sprint-review-app' target='_blank' rel='noreferrer' />
     </div>
   );
 }

@@ -1,10 +1,6 @@
-import { Footer } from './Footer';
-import Navbar from './Navbar';
-
 export function ReportingPeriod() {
   return (
     <div className='flex flex-col min-h-screen w-1/2'>
-      <Navbar />
       <div className='text-center pt-8'>
         <h1 className='text-xl font-bold leading-tight tracking-tight text-text-color-h1 md:text-4xl dark:text-bg-color2'>
           Beszámolási időszakok
@@ -47,9 +43,7 @@ export function ReportingPeriod() {
           </table>
         </div>
       </div>
-      <a href='https://github.com/kir-dev/sprint-review-app' target='_blank' rel='noreferrer'>
-        <Footer />
-      </a>
+      <a href='https://github.com/kir-dev/sprint-review-app' target='_blank' rel='noreferrer' />
     </div>
   );
 }

@@ -1,9 +1,9 @@
-import SprintLogin from '../../components/NewProject';
+import { ReportingPeriod } from '../../../components/ReportingPeriod';
 
 export default function Home() {
   return (
     <main className='flex items-center justify-center bg-page-bg-color'>
-      <SprintLogin />
+      <ReportingPeriod />
     </main>
   );
 }

@@ -2,8 +2,6 @@
 import { FormEvent, useState } from 'react';
 
 import api from '../lib/axiosConfig';
-import { Footer } from './Footer';
-import Navbar from './Navbar';
 
 export default function NewProject() {
   const [formData, setFormData] = useState({
@@ -39,7 +37,6 @@ export default function NewProject() {
 
   return (
     <div className='w-3/5 flex flex-col justify-center px-8 py-8 mx-auto md:h-screen lg:py-0'>
-      <Navbar />
       <div className='p-6 space-y-4 md:space-y-6 sm:p-8 w-full'>
         <h1 className='text-xl font-bold leading-tight tracking-tight text-text-color-h1 md:text-4xl dark:text-bg-color2 w-full text-center'>
           Új Projekt Létrehozása
@@ -76,9 +73,7 @@ export default function NewProject() {
           </div>
         </form>
       </div>
-      <a href='https://github.com/kir-dev/sprint-review-app' target='_blank' rel='noreferrer'>
-        <Footer />
-      </a>
+      <a href='https://github.com/kir-dev/sprint-review-app' target='_blank' rel='noreferrer' />
     </div>
   );
 }

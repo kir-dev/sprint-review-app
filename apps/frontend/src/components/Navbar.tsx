@@ -1,6 +1,6 @@
 export default function Navbar() {
   return (
-    <header className='flex flex-col items-center justify-between px-8 py-5'>
+    <header className='flex flex-col items-center justify-between px-8 py-5 bg-page-bg-color'>
       <nav className='text-text-color space-x-5 rounded py-5'>
         <a
           href='/afterlogin'
