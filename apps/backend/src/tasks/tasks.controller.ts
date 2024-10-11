@@ -24,6 +24,16 @@ export class TasksController {
     return this.tasksService.findAll();
   }
 
+  @Get('sprint/:sprintId')
+  findAllBySprintId(@Param('sprintId') sprintId: string) {
+    return this.tasksService.findAllBySprintId(Number(sprintId));
+  }
+
+  @Get('project/:projectId')
+  findAllByProjectId(@Param('projectId') projectId: string) {
+    return this.tasksService.findAllByProjectId(Number(projectId));
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.tasksService.findOne(Number(id));

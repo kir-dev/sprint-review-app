@@ -33,6 +33,30 @@ export class TasksService {
     }
   }
 
+  async findAllBySprintId(sprintId: number) {
+    try {
+      return await this.prisma.tasks.findMany({
+        where: {
+          sprintId,
+        },
+      });
+    } catch {
+      throw new NotFoundException('Tasks not found');
+    }
+  }
+
+  async findAllByProjectId(projectId: number) {
+    try {
+      return await this.prisma.tasks.findMany({
+        where: {
+          projectId,
+        },
+      });
+    } catch {
+      throw new NotFoundException('Tasks not found');
+    }
+  }
+
   async findOne(id: number) {
     const task = await this.prisma.tasks.findUnique({
       where: { id },
