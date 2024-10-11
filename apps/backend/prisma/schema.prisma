@@ -14,13 +14,12 @@ datasource db {
 }
 
 model User {
-  id        Int       @id @default(autoincrement())
+  id        String    @id
   lastname  String
   firstname String
-  password  String
   email     String    @unique
   role      Role      @default(USER)
-  Projekt   Projekt[]
+  Project   Project[]
   Tasks     Tasks[]
 }
 
@@ -29,12 +28,12 @@ enum Role {
   USER
 }
 
-model Projekt {
+model Project {
   id             Int      @id @default(autoincrement())
   name           String
   description    String
-  projektManager User     @relation(fields: [userId], references: [id])
-  userId         Int
+  projectManager User     @relation(fields: [userId], references: [id])
+  userId         String
   createdAt      DateTime @default(now())
 
   Tasks Tasks[]
@@ -53,9 +52,9 @@ model Tasks {
   description String
   sprintId    Int
   sprint      Sprint   @relation(fields: [sprintId], references: [id])
-  userId      Int?
-  user        User?    @relation(fields: [userId], references: [id])
-  projektId   Int?
-  projekt     Projekt? @relation(fields: [projektId], references: [id])
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  projectId   Int
+  project     Project  @relation(fields: [projectId], references: [id])
   createdAt   DateTime @default(now())
 }

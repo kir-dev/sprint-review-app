@@ -3,7 +3,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-import Navbar from './Navbar';
 import { Task } from './tasks-dto';
 
 export default function CurrentJobs() {
@@ -21,7 +20,6 @@ export default function CurrentJobs() {
 
   return (
     <div className='flex flex-col min-h-screen w-1/2'>
-      <Navbar />
       <div className='text-center pt-8'>
         <h1 className='text-xl font-bold leading-tight tracking-tight text-text-color-h1 md:text-4xl dark:text-bg-color2'>
           Munkák

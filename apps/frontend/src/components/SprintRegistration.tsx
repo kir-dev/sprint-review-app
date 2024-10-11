@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 
-import { Footer } from './Footer';
+import api from '../lib/axiosConfig';
 
 export default function RegistrationForm() {
   const [formData, setFormData] = useState({
@@ -38,13 +38,13 @@ export default function RegistrationForm() {
     }
 
     try {
-      const response = await fetch('http://localhost:3001/user', {
+      const response = await api('/user', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        data: JSON.stringify(formData),
       });
 
-      if (!response.ok) {
+      if (!response.status) {
         throw new Error(`A regisztráció nem sikerült. hibakód: ${response.status}`);
       }
 
@@ -133,9 +133,7 @@ export default function RegistrationForm() {
           </form>
         </div>
       </div>
-      <a href='https://github.com/kir-dev/sprint-review-app' target='_blank' rel='noreferrer'>
-        <Footer />
-      </a>
+      <a href='https://github.com/kir-dev/sprint-review-app' target='_blank' rel='noreferrer' />
     </div>
   );
 }

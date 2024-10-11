@@ -1,4 +1,4 @@
-import { ReportingPeriod } from '../../components/ReportingPeriod';
+import { ReportingPeriod } from '../../../components/ReportingPeriod';
 
 export default function Home() {
   return (
