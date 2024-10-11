@@ -25,7 +25,7 @@ export class AuthService {
   }
   login(user: User): string {
     return this.jwtService.sign(user, {
-      secret: '<your secret>',
+      secret: process.env.JWT_SECRET,
       expiresIn: '7 days',
     });
   }
