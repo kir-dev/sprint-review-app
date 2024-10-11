@@ -1,14 +1,6 @@
 import Navbar from './Navbar';
 
 export default function CurrentJobs() {
-  function ExpendableTable() {
-    const [ExpandedRow, setExpandedRow] = useState(false);
-
-    const toggleRow = (rowIndex) => {
-      setExpandedRow(expandedRow === rowIndex ? null : rowIndex);
-    };
-  }
-
   return (
     <div className='flex flex-col min-h-screen w-1/2'>
       <Navbar />
