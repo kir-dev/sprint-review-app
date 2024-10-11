@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 
+import api from '../lib/axiosConfig';
 import { Footer } from './Footer';
 
 export default function RegistrationForm() {
@@ -38,13 +39,13 @@ export default function RegistrationForm() {
     }
 
     try {
-      const response = await fetch('http://localhost:3001/user', {
+      const response = await api('/user', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        data: JSON.stringify(formData),
       });
 
-      if (!response.ok) {
+      if (!response.status) {
         throw new Error(`A regisztráció nem sikerült. hibakód: ${response.status}`);
       }
 
