@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
-import { SprintService } from './sprint.service';
+
 import { SprintController } from './sprint.controller';
+import { SprintService } from './sprint.service';
 
 @Module({
   controllers: [SprintController],
