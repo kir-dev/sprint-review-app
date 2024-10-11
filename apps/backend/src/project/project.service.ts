@@ -2,12 +2,22 @@ import { Injectable } from '@nestjs/common';
 import { Prisma, Project } from '@prisma/client';
 import { PrismaService } from 'nestjs-prisma';
 
+import { CreateProjectDto } from './dto/create-project.dto';
+
 @Injectable()
 export class ProjectService {
   constructor(private readonly Prisma: PrismaService) {}
 
-  async create(data: Prisma.ProjectCreateInput): Promise<Project> {
-    return await this.Prisma.project.create({ data });
+  async create(data: CreateProjectDto, userId: string): Promise<Project> {
+    return await this.Prisma.project.create({
+      data: {
+        name: data.name,
+        description: data.description,
+        projectManager: {
+          connect: { id: userId },
+        },
+      },
+    });
   }
 
   async findAll(): Promise<Project[]> {
