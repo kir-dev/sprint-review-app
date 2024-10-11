@@ -36,7 +36,7 @@ export default function NewProject() {
   };
 
   return (
-    <div className='w-3/5 flex flex-col justify-center px-8 py-8 mx-auto md:h-screen lg:py-0'>
+    <div className='w-3/5 flex px-8 py-8 mx-auto lg:py-0'>
       <div className='p-6 space-y-4 md:space-y-6 sm:p-8 w-full'>
         <h1 className='text-xl font-bold leading-tight tracking-tight text-text-color-h1 md:text-4xl dark:text-bg-color2 w-full text-center'>
           Új Projekt Létrehozása

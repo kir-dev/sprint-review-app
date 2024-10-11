@@ -1,12 +1,12 @@
 export function ReportingPeriod() {
   return (
-    <div className='flex flex-col min-h-screen w-1/2'>
+    <div className='flex flex-col w-1/2'>
       <div className='text-center pt-8'>
         <h1 className='text-xl font-bold leading-tight tracking-tight text-text-color-h1 md:text-4xl dark:text-bg-color2'>
           Beszámolási időszakok
         </h1>
       </div>
-      <div className='flex pt-32 items-center justify-center'>
+      <div className='flex pt-16 items-center justify-center'>
         <div className='text-text-color items-center justify-center w-full'>
           <table className='min-w-full max-w-lg text-center text-sm font-light text-surface dark:text-white'>
             <thead className='border-b border-neutral-200 font-medium dark:border-white/10 text-2xl'>
