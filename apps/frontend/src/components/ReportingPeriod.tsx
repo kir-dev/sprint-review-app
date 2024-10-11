@@ -21,10 +21,14 @@ export async function ReportingPeriod() {
             </thead>
             <tbody>
               {sprints.map((sprint) => (
-                <tr className='border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-bg-color1 dark:border-white/10 dark:hover:bg-neutral-600'>
+                <tr
+                  key={sprint.id}
+                  className='border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-bg-color1 dark:border-white/10 dark:hover:bg-neutral-600'
+                >
                   <td className='float-left whitespace-nowrap px-6 py-4 font-medium tracking-wider'>
                     <a href='#'>
-                      {sprint.startDate.toString()}-{sprint.endDate.toString()}
+                      {new Date(sprint.startDate).toLocaleDateString('hu')} -{' '}
+                      {new Date(sprint.endDate).toLocaleDateString('hu')}
                     </a>
                   </td>
                   <td className='float-right whitespace-nowrap px-6 py-4 font-medium'>Pipa vagy x</td>
