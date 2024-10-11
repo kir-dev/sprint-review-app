@@ -3,5 +3,4 @@ export class CreateUserDto {
   foreName: string;
   password: string;
   email: string;
-  //TODO: user adatelemei
 }
