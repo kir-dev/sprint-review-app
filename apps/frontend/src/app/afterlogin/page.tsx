@@ -1,4 +1,4 @@
-import AfterLogin from '../../../components/AfterLogin';
+import AfterLogin from '../../components/AfterLogin';
 
 export default function Home() {
   return (
