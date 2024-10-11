@@ -2,7 +2,6 @@
 import { useState } from 'react';
 
 import api from '../lib/axiosConfig';
-import { Footer } from './Footer';
 
 export default function RegistrationForm() {
   const [formData, setFormData] = useState({
@@ -134,9 +133,7 @@ export default function RegistrationForm() {
           </form>
         </div>
       </div>
-      <a href='https://github.com/kir-dev/sprint-review-app' target='_blank' rel='noreferrer'>
-        <Footer />
-      </a>
+      <a href='https://github.com/kir-dev/sprint-review-app' target='_blank' rel='noreferrer' />
     </div>
   );
 }

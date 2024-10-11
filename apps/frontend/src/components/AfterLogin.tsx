@@ -1,5 +1,3 @@
-import { Footer } from './Footer';
-
 export default function GreetingsPage() {
   return (
     <div className='flex flex-col min-h-screen'>
@@ -56,9 +54,7 @@ export default function GreetingsPage() {
             </p>
           </a>
         </div>
-        <a href='https://github.com/kir-dev/sprint-review-app' target='_blank' rel='noreferrer'>
-          <Footer />
-        </a>
+        <a href='https://github.com/kir-dev/sprint-review-app' target='_blank' rel='noreferrer' />
       </div>
     </div>
   );

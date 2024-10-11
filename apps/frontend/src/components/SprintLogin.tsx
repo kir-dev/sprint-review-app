@@ -3,8 +3,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Footer } from './Footer';
-
 export default function SprintLogin() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   async function IsUserRegistrated(event: React.FormEvent<HTMLFormElement>) {
@@ -139,9 +137,7 @@ export default function SprintLogin() {
           </form>
         </div>
       </div>
-      <a href='https://github.com/kir-dev/sprint-review-app' target='_blank' rel='noreferrer'>
-        <Footer />
-      </a>
+      <a href='https://github.com/kir-dev/sprint-review-app' target='_blank' rel='noreferrer' />
     </div>
   );
 }
