@@ -23,7 +23,7 @@ export class UserController {
     const user = await this.authService.signIn(loginDto.email, loginDto.password);
     return {
       ...user,
-      isRegistered: user ? true : false,
+      isRegistered: Boolean(user),
     };
   }
 
