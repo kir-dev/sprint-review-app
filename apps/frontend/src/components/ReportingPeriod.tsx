@@ -1,7 +1,11 @@
+import { getSprints } from '../network/getSprints';
+import { SprintEntity } from '../types/sprint.type';
 import { Footer } from './Footer';
 import Navbar from './Navbar';
 
-export function ReportingPeriod() {
+export async function ReportingPeriod() {
+  const sprints: SprintEntity[] = await getSprints();
+
   return (
     <div className='flex flex-col min-h-screen w-1/2'>
       <Navbar />
@@ -19,30 +23,16 @@ export function ReportingPeriod() {
               </tr>
             </thead>
             <tbody>
-              <tr className='border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-bg-color1 dark:border-white/10 dark:hover:bg-neutral-600'>
-                <td className='float-left whitespace-nowrap px-6 py-4 font-medium tracking-wider'>
-                  <a href='#'>2021.01.01 - 2021.01.15</a>
-                </td>
-                <td className='float-right whitespace-nowrap px-6 py-4 font-medium'>Pipa vagy x</td>
-              </tr>
-              <tr className='border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-bg-color1 dark:border-white/10 dark:hover:bg-neutral-600'>
-                <td className='float-left whitespace-nowrap px-6 py-4 font-medium tracking-wider'>
-                  <a href='#'>2021.01.16 - 2021.02.01.</a>
-                </td>
-                <td className='float-right whitespace-nowrap px-6 py-4 font-medium'>Pipa vagy x</td>
-              </tr>
-              <tr className='border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-bg-color1 dark:border-white/10 dark:hover:bg-neutral-600'>
-                <td className='float-left whitespace-nowrap px-6 py-4 font-medium tracking-wider'>
-                  <a href='#'>2021.02.02. - 2021.02.15.</a>
-                </td>
-                <td className='float-right whitespace-nowrap px-6 py-4 font-medium'>Pipa vagy x</td>
-              </tr>
-              <tr className='border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-bg-color1 dark:border-white/10 dark:hover:bg-neutral-600'>
-                <td className='float-left whitespace-nowrap px-6 py-4 font-medium tracking-wider'>
-                  <a href='#'>2021.02.15. - 2021.03.01.</a>
-                </td>
-                <td className='float-right whitespace-nowrap px-6 py-4 font-medium'>Pipa vagy x</td>
-              </tr>
+              {sprints.map((sprint) => (
+                <tr className='border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-bg-color1 dark:border-white/10 dark:hover:bg-neutral-600'>
+                  <td className='float-left whitespace-nowrap px-6 py-4 font-medium tracking-wider'>
+                    <a href='#'>
+                      {sprint.startDate.toString()}-{sprint.endDate.toString()}
+                    </a>
+                  </td>
+                  <td className='float-right whitespace-nowrap px-6 py-4 font-medium'>Pipa vagy x</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
