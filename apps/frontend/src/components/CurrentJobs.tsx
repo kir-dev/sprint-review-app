@@ -1,4 +1,23 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+
+import api from '../lib/axiosConfig';
+import { Task } from './tasks-dto';
+
 export default function CurrentJobs() {
+  const [tasks, setTasks] = useState<Task[]>([]);
+
+  const onGetData = () => {
+    api.get('/tasks').then((res) => {
+      setTasks(res.data);
+    });
+  };
+
+  useEffect(() => {
+    onGetData();
+  }, []);
+
   return (
     <div className='flex flex-col min-h-screen w-1/2'>
       <div className='text-center pt-8'>
@@ -15,36 +34,17 @@ export default function CurrentJobs() {
               </tr>
             </thead>
             <tbody>
-              <tr className='border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-bg-color1 dark:border-white/10 dark:hover:bg-neutral-600'>
-                <td className='float-left whitespace-nowrap px-6 py-4 font-medium tracking-wider'>Felelős pozíciók</td>
-                <td className='float-right whitespace-nowrap px-6 py-4 font-medium'>.</td>
-              </tr>
-              <tr className='border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-bg-color1 dark:border-white/10 dark:hover:bg-neutral-600'>
-                <td className='float-left whitespace-nowrap px-6 py-4 font-medium tracking-wider'>Projektmunkák</td>
-                <td className='float-right whitespace-nowrap px-6 py-4 font-medium'>.</td>
-              </tr>
-              <tr className='border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-bg-color1 dark:border-white/10 dark:hover:bg-neutral-600'>
-                <td className='float-left whitespace-nowrap px-6 py-4 font-medium tracking-wider'>
-                  Tanfolyam/mentorálás
-                </td>
-                <td className='float-right whitespace-nowrap px-6 py-4 font-medium'>.</td>
-              </tr>
-              <tr className='border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-bg-color1 dark:border-white/10 dark:hover:bg-neutral-600'>
-                <td className='float-left whitespace-nowrap px-6 py-4 font-medium tracking-wider'>.</td>
-                <td className='float-right whitespace-nowrap px-6 py-4 font-medium'>.</td>
-              </tr>
-              <tr className='border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-bg-color1 dark:border-white/10 dark:hover:bg-neutral-600'>
-                <td className='float-left whitespace-nowrap px-6 py-4 font-medium tracking-wider'>.</td>
-                <td className='float-right whitespace-nowrap px-6 py-4 font-medium'>.</td>
-              </tr>
-              <tr className='border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-bg-color1 dark:border-white/10 dark:hover:bg-neutral-600'>
-                <td className='float-left whitespace-nowrap px-6 py-4 font-medium tracking-wider'>.</td>
-                <td className='float-right whitespace-nowrap px-6 py-4 font-medium'>.</td>
-              </tr>
-              <tr className='border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-bg-color1 dark:border-white/10 dark:hover:bg-neutral-600'>
-                <td className='float-left whitespace-nowrap px-6 py-4 font-medium tracking-wider'>.</td>
-                <td className='float-right whitespace-nowrap px-6 py-4 font-medium'>.</td>
-              </tr>
+              {tasks.map((task) => (
+                <tr
+                  key={task.id}
+                  className='border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-bg-color1 dark:border-white/10 dark:hover:bg-neutral-600'
+                >
+                  <td className='float-left whitespace-nowrap px-6 py-4 font-medium tracking-wider'>
+                    {task.description}
+                  </td>
+                  <td className='float-right whitespace-nowrap px-6 py-4 font-medium'>.</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
