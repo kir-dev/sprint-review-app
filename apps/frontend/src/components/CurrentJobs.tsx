@@ -1,15 +1,15 @@
 'use client';
 
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 
+import api from '../lib/axiosConfig';
 import { Task } from './tasks-dto';
 
 export default function CurrentJobs() {
   const [tasks, setTasks] = useState<Task[]>([]);
 
   const onGetData = () => {
-    axios.get('http://localhost:3001/tasks').then((res) => {
+    api.get('/tasks').then((res) => {
       setTasks(res.data);
     });
   };
