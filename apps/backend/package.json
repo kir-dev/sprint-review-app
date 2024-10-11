@@ -20,6 +20,7 @@
     "@nestjs/mapped-types": "*",
     "@nestjs/platform-express": "^10.3.8",
     "@prisma/client": "^5.13.0",
+    "backend": "file:",
     "nestjs-prisma": "^0.23.0",
     "reflect-metadata": "^0.2.2",
     "rimraf": "^5.0.5",
