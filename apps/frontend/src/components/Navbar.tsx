@@ -20,6 +20,12 @@ export default function Navbar() {
         >
           Munkák
         </a>
+        <a
+          href='/newproject'
+          className='w-32 h-32 hover:scale-110 transform transition-transform hover:bg-bg-color1 font-bold py-2 px-4 rounded-lg hover:shadow-lg duration-300'
+        >
+          Új Projekt
+        </a>
       </nav>
     </header>
   );
