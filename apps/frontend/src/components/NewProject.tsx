@@ -13,7 +13,6 @@ export default function NewProject() {
 
   const handleChange = (event: { target: { name: any; value: any } }) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
-    console.log('asda');
   };
 
   const projectFormState = async (event: FormEvent<HTMLFormElement>) => {
@@ -31,7 +30,7 @@ export default function NewProject() {
         data: JSON.stringify(formData),
       });
     } catch (error) {
-      console.log((error as any).message);
+      setErrorMessage((error as any).message);
     }
   };
 
