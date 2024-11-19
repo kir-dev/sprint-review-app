@@ -18,7 +18,7 @@ export default function GreetingsPage() {
         <div className='flex flex-row gap-x-4 items-center justify-center'>
           <a
             href='/reportingperiod'
-            className='block w-64 h-96 max-w-sm py-6 px-6 bg-bg-color2 border border-black rounded-lg shadow hover:bg-bg-color1 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700'
+            className='block w-64 h-96 max-w-sm py-6 px-6 bg-bg-color2 border border-black rounded-lg shadow hover:bg-bg-color1 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 transition duration-300'
           >
             <h5 className='mb-2 text-2xl font-bold tracking-tight text-text-color dark:text-white'>
               Beszámolási időszakok
@@ -30,7 +30,7 @@ export default function GreetingsPage() {
           </a>
           <a
             href='/currentjobs'
-            className='block w-64 h-96 max-w-sm p-6 bg-bg-color2 border border-black rounded-lg shadow hover:bg-bg-color1 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700'
+            className='block w-64 h-96 max-w-sm p-6 bg-bg-color2 border border-black rounded-lg shadow hover:bg-bg-color1 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 transition duration-300'
           >
             <h5 className='mb-2 text-2xl font-bold tracking-tight text-text-color dark:text-white'>Munkák</h5>
             <p className='font-normal text-text-color dark:text-gray-400'>Láthatod a jelenleg zajló</p>
@@ -46,7 +46,7 @@ export default function GreetingsPage() {
           </a>
           <a
             href='/newproject'
-            className='block w-64 h-96 max-w-sm p-6 bg-bg-color2 border border-black rounded-lg shadow hover:bg-bg-color1 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700'
+            className='block w-64 h-96 max-w-sm p-6 bg-bg-color2 border border-black rounded-lg shadow hover:bg-bg-color1 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 transition duration-300'
           >
             <h5 className='mb-2 text-2xl font-bold tracking-tight text-text-color dark:text-white'>Új Projekt</h5>
             <p className='font-normal text-text-color dark:text-gray-400'>Itt tudsz új projeket nyitni.</p>
