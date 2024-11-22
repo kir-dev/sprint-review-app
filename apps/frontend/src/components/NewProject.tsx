@@ -13,7 +13,6 @@ export default function NewProject() {
 
   const handleChange = (event: { target: { name: any; value: any } }) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
-    console.log('asda');
   };
 
   const projectFormState = async (event: FormEvent<HTMLFormElement>) => {
@@ -31,7 +30,7 @@ export default function NewProject() {
         data: JSON.stringify(formData),
       });
     } catch (error) {
-      console.log((error as any).message);
+      setErrorMessage((error as any).message);
     }
   };
 
@@ -66,7 +65,7 @@ export default function NewProject() {
           <div className='justify-center flex'>
             <button
               type='submit'
-              className='w-1/2 border font-semibold text-text-color rounded-lg text-sm px-5 py-2.5 text-center border-[#8b97a4] hover:border-text-color hover:bg-[#2c3540] focus:ring-4 '
+              className='w-1/2 border font-semibold text-text-color rounded-lg text-sm px-5 py-2.5 text-center border-[#8b97a4] hover:border-text-color hover:bg-[#2c3540] focus:ring-4 transition duration-300'
             >
               Létrehozás
             </button>

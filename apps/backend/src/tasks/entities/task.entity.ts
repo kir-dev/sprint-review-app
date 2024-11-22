@@ -11,8 +11,7 @@ export class Tasks {
   @IsInt()
   sprintId: number;
 
-  @IsInt()
-  userId: number;
+  userId: string;
 
   @IsInt()
   projectId: number;
